@@ -8,7 +8,7 @@ import LisaToode from './pages/LisaToode';
 function App() {
   return (
     <div className="App">
-      <Link to="/avaleht">
+      <Link to="/">
         <img className="pilt" alt="lille pilt" src="https://wallsdesk.com/wp-content/uploads/2016/09/Lotus-Flower-Computer-Wallpaper.jpg"/>
       </Link>
 
@@ -21,7 +21,7 @@ function App() {
       </Link>
 
       <Routes>
-        <Route path='avaleht' element={<Avaleht/>}/>
+        <Route path='' element={<Avaleht/>}/>
         <Route path='ostukorv' element={<Ostukorvi/>}/>
         <Route path='lisa-toode' element={<LisaToode/>}/>
       </Routes>
