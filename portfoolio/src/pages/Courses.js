@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function Courses() {
   return (
     <div>
-      <Link to='/'><button style={{margin:"20px"}}>Back</button></Link>
+      <Link to='/'><button className='nupp'>Back</button></Link>
       <div>Kursuste sisu</div>
     </div>
   )

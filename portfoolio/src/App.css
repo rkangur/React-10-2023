@@ -41,3 +41,8 @@ p {
   transition: 0.5s; /*change*/
   box-shadow: 0 8px 100px 0px;
 }
+
+.nupp {
+  margin: 20px;
+  background-color: blue;
+}
