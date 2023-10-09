@@ -16,18 +16,6 @@ function App() {
         // convert string to JSON
         // response = $.parseJSON(response);
 
-        {/* $(function() {
-          $.each(response, function(i, item) {
-              var $tr = $('<tr>').append(
-                  $('<td>').text(item.rank),
-                  $('<td>').text(item.content),
-                  $('<td>').text(item.UID)
-              ); //.appendTo('#records_table');
-              console.log($tr.wrap('<p>').html());
-              <button className="detailinupp">Details</button>
-                });
-            }); */}
-
       </header>
     </div>
   );
