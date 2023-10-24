@@ -35,7 +35,7 @@ function App() {
     <div className="App">
       <div>{sonum}</div>
       
-      {sisselogitud === "ei" &&<div>
+      {sisselogitud === "ei" && <div>
         <label>Kasutajanimi:</label> <br />
         <input ref={kasutajaNimi} type="text"></input> <br />
         <label>Parool:</label> <br />
