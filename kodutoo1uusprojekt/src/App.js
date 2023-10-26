@@ -6,6 +6,9 @@ import Kontakt from './pages/Kontakt';
 import { useRef, useState } from 'react';
 import Leht from './pages/Leht';
 import Loader from './pages/Loader';
+import Seaded from './pages/Seaded';
+import Books from './pages/Books';
+
 
 
 function App() {
@@ -33,7 +36,12 @@ function App() {
 
   return (
     <div className="App">
+       <Link to="/seaded">
+        <button>Seadetesse</button>
+      </Link> <br /> <br />
+
       <div>{sonum}</div>
+      
       
       {sisselogitud === "ei" && <div>
         <label>Kasutajanimi:</label> <br />
@@ -48,7 +56,7 @@ function App() {
       
       <Link to="/">
         <button>Avalehele</button>
-      </Link>
+      </Link> 
       <Link to="/meist">
         <button>Meist</button>
       </Link>
@@ -58,6 +66,9 @@ function App() {
       <Link to="/leht">
         <button>Lehele</button>
       </Link> <br />
+      <Link to="/books">
+        <button>Raamatud</button>
+      </Link> <br />
       <Link to="/loader">Süda</Link>
       <Routes>
         <Route path="" element={<Avaleht />}/>
@@ -65,6 +76,8 @@ function App() {
         <Route path="/kontakt" element={<Kontakt />}/>
         <Route path="/leht" element={<Leht />}/>
         <Route path="/loader" element={<Loader />}/>
+        <Route path="/seaded" element={<Seaded />}/>
+        <Route path="/books" element={<Books />}/>
       </Routes>
     </div>
   );
