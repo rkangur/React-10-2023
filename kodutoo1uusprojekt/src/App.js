@@ -8,6 +8,7 @@ import Leht from './pages/Leht';
 import Loader from './pages/Loader';
 import Seaded from './pages/Seaded';
 import Books from './pages/Books';
+import Numbrid from './pages/Numbrid';
 
 
 
@@ -68,6 +69,9 @@ function App() {
       </Link> <br />
       <Link to="/books">
         <button>Raamatud</button>
+      </Link>
+      <Link to="/numbrid">
+        <button>Numbrid</button>
       </Link> <br />
       <Link to="/loader">Süda</Link>
       <Routes>
@@ -78,6 +82,7 @@ function App() {
         <Route path="/loader" element={<Loader />}/>
         <Route path="/seaded" element={<Seaded />}/>
         <Route path="/books" element={<Books />}/>
+        <Route path="/numbrid" element={<Numbrid />}/>
       </Routes>
     </div>
   );

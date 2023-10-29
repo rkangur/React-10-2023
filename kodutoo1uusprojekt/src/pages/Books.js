@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
+import raamatudFailist from "../data/raamatud.json";
 
 function Books() {
-    const [books, muudaBooks] = useState(["The Great Gatsby", "War and Peace", "Hamlet", "Moby Dick", "Jane Eyre", "OZ"]);
-    const [sonadeArv, muudaSonadeArv] = useState(0);
+    const [books, muudaBooks] = useState(raamatudFailist);
 
     const sorteeriAZ = () => {
         books.sort();
@@ -25,7 +25,9 @@ function Books() {
     }
 
     const sorteeriSonadeArv = () => {
-        //TODO
+        books.sort((a, b) => a.split(" ").length - b.split(" ").length);
+        muudaBooks(books.slice());
+        
     }
 
     const sorteeriEelviimaneTaht = () => {
@@ -34,34 +36,35 @@ function Books() {
     }
 
     const originaali = () => {
-        muudaBooks(["The Great Gatsby", "War and Peace", "Hamlet", "Moby Dick", "Jane Eyre", "OZ"]);
+        muudaBooks(raamatudFailist);
     }
 
     const filtreeriKesSisaldabandyhendit = () => {
-        const vastus = books.filter(yksRaamat => yksRaamat.includes("and"));
+        const vastus = raamatudFailist.filter(yksRaamat => yksRaamat.includes("and"));
         muudaBooks(vastus);
     }
 
     const filtreeriTheAlgavad = () => {
-        const vastus = books.filter(yksRaamat => yksRaamat.startsWith("The"));
+        const vastus = raamatudFailist.filter(yksRaamat => yksRaamat.startsWith("The"));
         muudaBooks(vastus);
     }
 
     const filtreeriKuiSõnapikkusSuuremKuiKümme = () => {
-        const vastus = books.filter(yksRaamat => yksRaamat.length > 10);
+        const vastus = raamatudFailist.filter(yksRaamat => yksRaamat.length > 10);
         muudaBooks(vastus);
     }
 
     const filtreeriKuiSõnapikkusVähemKuiSeitse = () => {
-        const vastus = books.filter(yksRaamat => yksRaamat.length < 7);
+        const vastus = raamatudFailist.filter(yksRaamat => yksRaamat.length < 7);
         muudaBooks(vastus);
     }
 
     const filtreeriKuiSõnuRohkemKuiKolmSona = () => {
-        //TODO
+        const vastus = raamatudFailist.filter(yksRaamat => yksRaamat.split(" ").length > 3);
+        muudaBooks(vastus);
     }
     const filtreeriKuiEelviimaneTahtC = () => {
-        const vastus = books.filter(yksRaamat => yksRaamat.at(yksRaamat.length-2) === "c");
+        const vastus = raamatudFailist.filter(yksRaamat => yksRaamat.at(yksRaamat.length-2) === "c");
         muudaBooks(vastus);
     }
 
@@ -78,7 +81,7 @@ function Books() {
             <button onClick={filtreeriKesSisaldabandyhendit}>Filtreeri "and" lühend</button>
             <button onClick={filtreeriKuiSõnapikkusSuuremKuiKümme}>Filtreeri lühend kui rohkem kui 10 tähte</button>
             <button onClick={filtreeriKuiSõnapikkusVähemKuiSeitse}>Filtreeri lühend kui vähem kui 7 tähte</button>
-            <button onClick={filtreeriKuiSõnuRohkemKuiKolmSona}>Filtreeri lühend kui rohkme kui 3 sõna</button>
+            <button onClick={filtreeriKuiSõnuRohkemKuiKolmSona}>Filtreeri lühend kui rohkem kui 3 sõna</button>
             <button onClick={filtreeriKuiEelviimaneTahtC}>Filtreeri lühend kui eelviimane täht "c"</button>
             {books.map(yksRaamat => <div>{yksRaamat}</div>)}
         </div>
