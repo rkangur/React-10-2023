@@ -57,7 +57,6 @@ function Numbrid() {
         muudaNumbrid(vastus);
     }
 
-
     return (
         <div>
             <button onClick={originaali}>Originaali</button>

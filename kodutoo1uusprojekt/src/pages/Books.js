@@ -76,7 +76,8 @@ function Books() {
             <button onClick={sorteeriSonaPikkus}>Sorteeri sõnapikkuse järgi</button>
             <button onClick={sorteeriTeineTaht}>Sorteeri sõna teise tähe järgi</button>
             <button onClick={sorteeriEelviimaneTaht}>Sorteeri Eelviimase tähe järgi</button>
-            <button onClick={sorteeriSonadeArv}>Sorteeri sõnade arvu järgi</button> <br />
+            <button onClick={sorteeriSonadeArv}>Sorteeri sõnade arvu järgi</button>
+            <br />
             <button onClick={filtreeriTheAlgavad}>Filtreeri The-ga Algavad</button>
             <button onClick={filtreeriKesSisaldabandyhendit}>Filtreeri "and" lühend</button>
             <button onClick={filtreeriKuiSõnapikkusSuuremKuiKümme}>Filtreeri lühend kui rohkem kui 10 tähte</button>
