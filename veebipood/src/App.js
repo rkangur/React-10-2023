@@ -4,6 +4,7 @@ import { Link, Route, Routes } from 'react-router-dom';
 import Avaleht from './pages/Avaleht';
 import Ostukorvi from './pages/Ostukorvi';
 import LisaToode from './pages/LisaToode';
+import Tooted from './pages/Tooted';
 
 function App() {
   return (
@@ -20,10 +21,15 @@ function App() {
         <button className="nupp">Lisa toode</button>
       </Link>
 
+      <Link to="/tooted">
+        <button className="nupp">Tooted</button>
+      </Link>
+
       <Routes>
         <Route path='' element={<Avaleht/>}/>
         <Route path='ostukorv' element={<Ostukorvi/>}/>
         <Route path='lisa-toode' element={<LisaToode/>}/>
+        <Route path='tooted' element={ <Tooted />} />
       </Routes>
     </div>
   );
