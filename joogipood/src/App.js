@@ -7,7 +7,6 @@ import Sisse from './pages/Sisse';
 
 function App() {
 
-  //const joogid = joogid.json;
 
   return (
     <div className="App">
