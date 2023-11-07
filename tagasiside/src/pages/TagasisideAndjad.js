@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import nimedFailist from '../data/nimed.json';
+import { Link } from 'react-router-dom';
 
 function TagasisideAndjad() {
     const [andjad, uuendaAndjad] = useState(nimedFailist);
@@ -51,6 +52,9 @@ function TagasisideAndjad() {
             { andjad.map((element, index) =>
                 <div key={element}>
                     {element} <button onClick={() => kustuta(index)}>X</button>
+                    <Link to={"/yksik-tagasiside-andja/" + index}>
+                        <button>Vaata tagasiside andjat</button>
+                    </Link>
                 </div>
             )}
 

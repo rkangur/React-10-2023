@@ -2,6 +2,7 @@ import './App.css';
 import { Route, Routes, Link } from 'react-router-dom';
 import Tagasiside from './pages/Tagasiside';
 import TagasisideAndjad from './pages/TagasisideAndjad';
+import YksikTagasisideAndja from './pages/YksikTagasisideAndja';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/" element={ <div>Tere</div>}/>
         <Route path="/tagasiside" element={ <Tagasiside /> } />
         <Route path="/tagasiside-andjad" element={ <TagasisideAndjad />} />
+        <Route path="/yksik-tagasiside-andja/:isik" element={ <YksikTagasisideAndja />} />
       </Routes>
     </div>
   );
