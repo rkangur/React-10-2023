@@ -1,31 +1,67 @@
 import React, { useState } from 'react'
 
 function Meist() {
-
   const [kontakt, n2itaKontakt] = useState("");
+  const [valitud, uuendaValitud] = useState("");
+
+  const tootajad = [
+      { 
+          nimi: "    Abra",
+          ala: "Psychic",
+          telefon: "153422" },
+      {
+          nimi: "    Kadabra",
+          ala: "Psychic",
+          telefon: "302223"
+      },
+      {
+          nimi: "    Alakazam",
+          ala: "Psychic",
+          telefon: "456777"
+      },
+      {
+          nimi: "    Machop",
+          ala: "Fighting",
+          telefon: "50"
+      },
+
+      {
+          nimi: "    Mari",
+          ala: "Fighting",
+          telefon: "50223"
+      },
+
+  ];
+
+  const votaYhendust = (tootaja) => {
+    n2itaKontakt(tootaja.telefon);
+    uuendaValitud(tootaja.nimi);
+  }
 
   return (
     <div>
-    <div className='mari'>
-        <h2>Mari</h2>
-        {/* <button>+37253009872</button> */}
-        Mari on tegelenud ajakirjandusega 15 aastat. Ta on väga kogenud koerte uudiste valdkonnas.
-        Tema igapäevatöö hõlmab nii näituste kui ka nendeks ettevalmistamise kajastamist.
-        Sündmuste infoga saab tutvuda uudiste lehel.
-        <br></br>
-        <button onClick={() => n2itaKontakt("+37253072072")}>Võta ühendust</button>
-    </div>
-    <div className='sten'>
-        <h2>Sten</h2>
-        {/* <button>+37253072872</button> */}
-        Sten on kogenud ajakirjanik, koolitaja ja ka koeraomanik. Tal on inglise setteri tõugu koerte kennel.
-        Sten pakub kuuletus ja agilty koolitusi. 
-        <br></br>
-        <button onClick={() => n2itaKontakt("+37253072872")}>Võta ühendust</button>
-    </div>
+
+      <div>
+        {tootajad.map((tootaja) =>
+        <div key={tootaja.nimi} className={tootaja.nimi === valitud ? 'valitud' : undefined}>
+          <div>{tootaja.nimi}</div>
+          <div>{tootaja.ala}</div>
+          <button onClick={() => votaYhendust(tootaja)}>Võta ühendust</button>
+          <br /><br />
+        </div>)}
+      </div>
+
+    {/* <div>Abra</div>
+    <div>Psychic</div>
+    <button onClick={() => n2itaKontakt("15")}>Näita defence levelit</button> <br/>
+
+    <div>Kadabra</div>
+    <div>Psychic</div>
+    <button onClick={() => n2itaKontakt("30")}>Näita defence levelit</button> */}
+
     { kontakt !== "" && <div>Tema kontakt: {kontakt}</div>}
-    </div>
-  )
+    </div>   
+    )
 }
 
 export default Meist
