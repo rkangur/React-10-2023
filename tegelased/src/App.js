@@ -3,6 +3,7 @@ import {Link, Route, Routes} from 'react-router-dom';
 import Avaleht from './pages/Avaleht';
 import ValitudTegelased from './pages/ValitudTegelased';
 import LisaTegelane from './pages/LisaTegelane';
+import Tegevused from './pages/Tegevused';
 
 function App() {
   return (
@@ -17,11 +18,15 @@ function App() {
       <Link to="/lisa-tegelane">
         <button className="nupp">Lisa tegelane</button>
       </Link>
+      <Link to="/tegevused">
+        <button className="nupp">Vaata tegevusi</button>
+      </Link>
 
       <Routes>
         <Route path='' element={<Avaleht/>}/>
         <Route path='/valitudtegelased' element={<ValitudTegelased/>}/>
         <Route path='/lisa-tegelane' element={<LisaTegelane/>}/>
+        <Route path='/tegevused' element={<Tegevused/>}/>
       </Routes>
       </div>
       
