@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
+import { useTranslation } from 'react-i18next';
 
 function Meist() {
   const [kontakt, n2itaKontakt] = useState("");
   const [valitud, uuendaValitud] = useState("");
+  const { t } = useTranslation();
 
   const tootajad = [
       { 
@@ -46,7 +48,7 @@ function Meist() {
         <div key={tootaja.nimi} className={tootaja.nimi === valitud ? 'valitud' : undefined}>
           <div>{tootaja.nimi}</div>
           <div>{tootaja.ala}</div>
-          <button onClick={() => votaYhendust(tootaja)}>Võta ühendust</button>
+          <button onClick={() => votaYhendust(tootaja)}>{t("vota-uhendust")}</button>
           <br /><br />
         </div>)}
       </div>
