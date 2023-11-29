@@ -15,7 +15,10 @@ const resources = {
         "suunaviide": "You can find useful information ",
         "link": "here",
         "ajakirjanik": "journalist",
-        "vota-uhendust": "contact me"
+        "vota-uhendust": "contact us",
+        "lisa-uudis": "Add news",
+        "halda-uudiseid": "Manage news",
+        "uudis": "Article"
     }
   },
   ee: {
@@ -28,7 +31,10 @@ const resources = {
         "suunaviide": "Kasulik blogi asub ",
         "link": "siin",
         "ajakirjanik": "ajakirjanik",
-        "vota-uhendust": "Võta ühendust"
+        "vota-uhendust": "Võta ühendust",
+        "lisa-uudis": "Lisa uudis",
+        "halda-uudiseid": "Uudiseid haldama",
+        "uudis": "Uudis"
     }
   }
 };

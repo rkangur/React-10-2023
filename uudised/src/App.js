@@ -4,7 +4,11 @@ import Avaleht from './pages/Avaleht';
 import Uudised from './pages/Uudised';
 import Kontakt from './pages/Kontakt';
 import Meist from './pages/Meist';
+import LisaUudis from './pages/LisaUudis';
 import { useTranslation } from 'react-i18next';
+import HaldaUudiseid from './pages/HaldaUudiseid';
+import YksUudis from './pages/YksUudis';
+import MuudaUudis from './pages/MuudaUudis';
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -34,6 +38,12 @@ function App() {
       <Link to='/meist'>
         <button as={Link} to="/meist">{t("meist")}</button>
       </Link>
+      <Link to='/lisa-uudis'>
+        <button as={Link} to="/lisa-uudis">{t("lisa-uudis")}</button>
+      </Link>
+      <Link to='/halda-uudiseid'>
+        <button as={Link} to="/halda-uudiseid">{t("halda-uudiseid")}</button>
+      </Link>
 
       <img className='lang' src="/united-kingdom.png" onClick={changeLangEn} alt="" />
       <img className='lang' src="/estonia.png" onClick={changeLangEe} alt="" />
@@ -43,6 +53,10 @@ function App() {
         <Route path='/uudised' element={<Uudised/>}/>
         <Route path='/kontakt' element={<Kontakt/>}/>
         <Route path='/meist' element={<Meist/>}/>
+        <Route path='/lisa-uudis' element={<LisaUudis/>}/>
+        <Route path='/halda-uudiseid' element={<HaldaUudiseid/>}/>
+        <Route path='/uudis/:index' element={<YksUudis/>}/>
+        <Route path='/muuda/:index' element={<MuudaUudis/>}/>
       </Routes>
     </div>
   );

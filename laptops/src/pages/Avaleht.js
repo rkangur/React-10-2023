@@ -3,6 +3,12 @@ import React from 'react'
 function Avaleht() {
   const computers = JSON.parse(localStorage.getItem("laptops")) || [];
 
+  const lisaOstukorvi = (arvuti) => {
+    const arvutidLS = JSON.parse(localStorage.getItem("cartLaptops")) || [];
+    arvutidLS.push(arvuti);
+    localStorage.setItem("cartLaptops", JSON.stringify(arvutidLS));
+  }
+
   return (
     <div className='avaleht-text'>
         <div>Tere</div><br></br>
@@ -12,7 +18,7 @@ function Avaleht() {
             <div>{oneComputer.mark}</div>
             <div>{oneComputer.mudel}</div>
             <div>{oneComputer.maksumus}</div>
-            <button>Vaata lähemalt</button>
+            <button onClick={() => lisaOstukorvi(oneComputer)}>Lisa ostukorvi</button>
           </div>)}
     </div>
   )
