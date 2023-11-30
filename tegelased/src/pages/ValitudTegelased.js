@@ -1,9 +1,38 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function ValitudTegelased() {
-  return (
-    <div>ValitudTegelased</div>
-  )
+  const [valitudTegelased, uuendaValitudTegelased] = useState(
+    JSON.parse(localStorage.getItem("valitudTegelased")) || []);
+
+  const eemalda = (index) => {
+    valitudTegelased.splice(index, 1);
+    uuendaValitudTegelased(valitudTegelased.slice());
+    localStorage.setItem("valitudTegelased", JSON.stringify(valitudTegelased));
+  }
+
+  const tyhjenda = () => {
+    uuendaValitudTegelased([]);
+    localStorage.setItem("valitudTegelased", JSON.stringify([]));
+  }
+
+    return (
+      <div>
+        { valitudTegelased.length > 0 ? 
+        <div>
+        <div>Valitud on {valitudTegelased.length} tegelast.</div>
+        <button onClick={tyhjenda}>Tühjenda</button>
+        </div>:
+        <div>Ühtegi tegelast ei ole hetkel valitud!</div>}
+        {valitudTegelased.map((tegelane, index) => 
+          <div key={index}>
+            <div>{tegelane.eesnimi}</div>
+            <div>{tegelane.perenimi}</div>
+            <div>{tegelane.elukoht}</div>
+            <div>{tegelane.vanus}</div>
+            <button onClick={() => eemalda(index)}>Eemalda</button>
+          </div>)}
+      </div>
+    )
 }
 
 export default ValitudTegelased

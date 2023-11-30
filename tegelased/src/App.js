@@ -10,10 +10,10 @@ function App() {
     <div className="App">
       <div>
       <Link to="/">
-        <button className="nupp">Avaleht</button>
+        <button className="nupp">Tegelased</button>
       </Link>
       <Link to="/vali-tegelane">
-        <button className="nupp">Vali tegelane</button>
+        <button className="nupp">Valitud tegelased</button>
       </Link>
       <Link to="/lisa-tegelane">
         <button className="nupp">Lisa tegelane</button>
@@ -24,7 +24,7 @@ function App() {
 
       <Routes>
         <Route path='' element={<Avaleht/>}/>
-        <Route path='/valitudtegelased' element={<ValitudTegelased/>}/>
+        <Route path='/vali-tegelane' element={<ValitudTegelased/>}/>
         <Route path='/lisa-tegelane' element={<LisaTegelane/>}/>
         <Route path='/tegevused' element={<Tegevused/>}/>
       </Routes>
