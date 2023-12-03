@@ -9,6 +9,8 @@ import { useTranslation } from 'react-i18next';
 import HaldaUudiseid from './pages/HaldaUudiseid';
 import YksUudis from './pages/YksUudis';
 import MuudaUudis from './pages/MuudaUudis';
+import KasutajaPostitus from './pages/KasutajaPostitus';
+import YksPostitus from './pages/YksPostitus';
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -57,6 +59,8 @@ function App() {
         <Route path='/halda-uudiseid' element={<HaldaUudiseid/>}/>
         <Route path='/uudis/:index' element={<YksUudis/>}/>
         <Route path='/muuda/:index' element={<MuudaUudis/>}/>
+        <Route path='/kasutaja-postitus/:kasutajaId' element={<KasutajaPostitus/>}/>
+        <Route path='/ykspostitus/:postituseId' element={<YksPostitus/>}/>
       </Routes>
     </div>
   );
