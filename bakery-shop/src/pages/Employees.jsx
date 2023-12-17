@@ -1,5 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { Button, Table } from "react-bootstrap";
+import validator from 'validator';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Employees() {
   const [users, setUsers] = useState([]);
@@ -21,15 +24,28 @@ function Employees() {
 
   const addEmployee = () => {
     // TODO: Add validations
+   	(validator.isEmail(emailRef.current.value) && 
+    (users.find(user => user.id === validator.isNumeric(idRef.current.value)) && 
+    validator.isAlphanumeric(first_nameRef.current.value) &&
+    validator.isAlphanumeric(last_nameRef.current.value)))
+    !== true ? 
+    toast.error("Please fill in all fields and enter valid data!") :
+
     // TODO: Add an employee to the table
     users.push( {
-      "id": idRef.current.value,
+      "id": Number(idRef.current.value),
       "first_name": first_nameRef.current.value,
       "last_name": last_nameRef.current.value,
       "email": emailRef.current.value,
       "avatar": avatarRef.current.value
     });
     setUsers(users.slice());
+
+    idRef.current.value = "";
+    first_nameRef.current.value = "";
+    last_nameRef.current.value = "";
+    emailRef.current.value = "";
+    avatarRef.current.value = "";
   }
 
   const deleteEmployee = (index) => {
@@ -67,17 +83,18 @@ function Employees() {
           </tr>)}     
 
           <tr className="input-row">
-          <td><input type="text" ref={idRef}/></td>
+          <td><input required type="text" ref={idRef} placeholder="ID (unique & numeric)"/></td>
           <td>
-            <input type="text" ref={first_nameRef} placeholder="First name"/> <br /> <br/>
-            <input type="text" ref={last_nameRef} placeholder="Last name"/>
+            <input required type="text" ref={first_nameRef} placeholder="First name (only letters)"/> <br /> <br/>
+            <input required type="text" ref={last_nameRef} placeholder="Last name (only letters)"/>
           </td>
-          <td><input type="text" ref={emailRef}/></td>
-          <td><input type="text" ref={avatarRef}/></td>
+          <td><input required type="text" ref={emailRef} placeholder="somebody@domain"/></td>
+          <td><input required type="text" ref={avatarRef} placeholder="image url (.png/.jpg)"/></td>
           <td><Button variant="success" type="submit" onClick={() => addEmployee()} >Add</Button></td>
         </tr>
           </tbody>
       </Table>
+      <ToastContainer />
     </div>
 
   </div>)
